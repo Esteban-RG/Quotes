@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  },
+  "source": "index.html",
+  "targets": {
+    "default": {
+      "distDir": "../target/classes/static"
+    }
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "scripts": {
+    "build": "parcel build"
+  }
+}
