@@ -72,7 +72,7 @@
 						<id>install node and npm</id>
 						<goals><goal>install-node-and-npm</goal></goals>
 						<configuration>
-							<nodeVersion>v18.17.0</nodeVersion>
+							<nodeVersion>v20.0.0</nodeVersion>
 							<npmVersion>9.6.7</npmVersion>
 							<workingDirectory>frontend</workingDirectory>
 						</configuration>
