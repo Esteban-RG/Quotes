@@ -17,9 +17,6 @@ public class Product {
 
     private @Id @GeneratedValue Long id;
 
-    @Column(name = "name", nullable = false)
-    private String name;
-
     @Column(name = "description", nullable = false)
     private String description;
 
@@ -29,23 +26,22 @@ public class Product {
     @Column(name = "img_path", nullable = false)
     private String img_path;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "unit_of_measure_id")
     private UnitOfMeasure unitOfMeasure;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<QuoteProduct> quoteProducts = new HashSet<>();
 
-    protected Product (){
-        this(null,null,null,null,null,null);
+    public Product(){
+        this(null,null,null,null,null);
     }
 
-    Product(String name, String description, Float price, String img_path, Category category, UnitOfMeasure unitOfMeasure){
-        this.name = name;
+    Product(String description, Float price, String img_path, Category category, UnitOfMeasure unitOfMeasure){
         this.description = description;
         this.price = price;
         this.img_path = img_path;
@@ -55,14 +51,6 @@ public class Product {
 
     public Long getId(){
         return this.id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {
