@@ -22,17 +22,17 @@ public class ClientService {
     public List<ClientDTO> getAll(){
         return repository.findAll()
         .stream()
-        .map(cat -> new ClientDTO(cat.getId(), cat.getEmail(), cat.getName(), cat.getPhoneNumber()))
+        .map(client  -> new ClientDTO(client .getId(), client .getEmail(), client .getName(), client .getPhoneNumber()))
         .collect(Collectors.toList());
     }
 
     public Optional<ClientDTO> getById(Long id){
         return repository.findById(id)
-        .map(cat -> new ClientDTO(cat.getId(), cat.getEmail(), cat.getName(), cat.getPhoneNumber()));
+        .map(client  -> new ClientDTO(client .getId(), client .getEmail(), client .getName(), client .getPhoneNumber()));
     }
 
-    public Client create(Client category){
-        return repository.save(category);
+    public Client create(Client product){
+        return repository.save(product);
     }
 
     public Optional<Client> update(Long id, Client newData) {
@@ -44,8 +44,8 @@ public class ClientService {
     }
 
     public boolean delete(Long id) {
-        return repository.findById(id).map(category -> {
-            repository.delete(category);
+        return repository.findById(id).map(product -> {
+            repository.delete(product);
             return true;
         }).orElse(false);
     }

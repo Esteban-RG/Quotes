@@ -22,17 +22,17 @@ public class UnitOfMeasureService {
     public List<UnitOfMeasureDTO> getAll(){
         return repository.findAll()
         .stream()
-        .map(cat -> new UnitOfMeasureDTO(cat.getId(), cat.getName()))
+        .map(unit -> new UnitOfMeasureDTO(unit.getId(), unit.getName()))
         .collect(Collectors.toList());
     }
 
     public Optional<UnitOfMeasureDTO> getById(Long id){
         return repository.findById(id)
-        .map(cat -> new UnitOfMeasureDTO(cat.getId(), cat.getName()));
+        .map(unit -> new UnitOfMeasureDTO(unit.getId(), unit.getName()));
     }
 
-    public UnitOfMeasure create(UnitOfMeasure category){
-        return repository.save(category);
+    public UnitOfMeasure create(UnitOfMeasure unitOfMeasure){
+        return repository.save(unitOfMeasure);
     }
 
     public Optional<UnitOfMeasure> update(Long id, UnitOfMeasure newData) {
@@ -44,8 +44,8 @@ public class UnitOfMeasureService {
     }
 
     public boolean delete(Long id) {
-        return repository.findById(id).map(category -> {
-            repository.delete(category);
+        return repository.findById(id).map(unitOfMeasure -> {
+            repository.delete(unitOfMeasure);
             return true;
         }).orElse(false);
     }
