@@ -6,8 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.FetchType;
-
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Product {
@@ -34,7 +37,8 @@ public class Product {
     @JoinColumn(name = "unit_of_measure_id")
     private UnitOfMeasure unitOfMeasure;
 
-
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<QuoteProduct> quoteProducts = new HashSet<>();
 
     protected Product (){
         this(null,null,null,null,null,null);
@@ -99,5 +103,11 @@ public class Product {
         this.unitOfMeasure = unitOfMeasure;
     }
 
+    public Set<QuoteProduct> getQuoteProducts() {
+        return quoteProducts;
+    }
 
+    public void setQuoteProducts(Set<QuoteProduct> quoteProducts) {
+        this.quoteProducts = quoteProducts;
+    }
 }
