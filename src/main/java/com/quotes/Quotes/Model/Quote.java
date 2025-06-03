@@ -6,8 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.FetchType;
-
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Quote {
@@ -27,6 +30,8 @@ public class Quote {
     @JoinColumn(name = "client_id")
     private Client client;
 
+    @OneToMany(mappedBy = "quote", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<QuoteProduct> quoteProducts = new HashSet<>();
 
     protected Quote() {
         this(null,null,null,null);
@@ -39,8 +44,54 @@ public class Quote {
         this.client = client;
     }
 
-    // Setters
+    // Métodos para gestionar productos
+    public void addProduct(Product product, Integer quantity) {
+        // Buscar si el producto ya existe en la cotización
+        QuoteProduct existingQuoteProduct = quoteProducts.stream()
+            .filter(qp -> qp.getProduct().equals(product))
+            .findFirst()
+            .orElse(null);
 
+        if (existingQuoteProduct != null) {
+            // Si el producto existe, actualizar la cantidad
+            existingQuoteProduct.setQuantity(existingQuoteProduct.getQuantity() + quantity);
+        } else {
+            // Si el producto no existe, crear uno nuevo
+            QuoteProduct quoteProduct = new QuoteProduct(this, product, quantity);
+            quoteProducts.add(quoteProduct);
+        }
+        
+        updateTotal();
+    }
+
+    public void removeProduct(Product product) {
+        quoteProducts.removeIf(qp -> qp.getProduct().equals(product));
+        updateTotal();
+    }
+
+    public void updateProductQuantity(Product product, Integer newQuantity) {
+        QuoteProduct existingQuoteProduct = quoteProducts.stream()
+            .filter(qp -> qp.getProduct().equals(product))
+            .findFirst()
+            .orElse(null);
+
+        if (existingQuoteProduct != null) {
+            if (newQuantity <= 0) {
+                removeProduct(product);
+            } else {
+                existingQuoteProduct.setQuantity(newQuantity);
+                updateTotal();
+            }
+        }
+    }
+
+    private void updateTotal() {
+        this.total = (float) quoteProducts.stream()
+            .mapToDouble(QuoteProduct::getSubtotal)
+            .sum();
+    }
+
+    // Setters
     public void setProject(String project){
         this.project = project;
     }
@@ -57,13 +108,7 @@ public class Quote {
         this.client = client;
     }
 
-
-
-
-
-
     // Getters 
-
     public String getProject(){
         return this.project;
     }
@@ -80,6 +125,12 @@ public class Quote {
         return this.client;
     }
 
+    public Set<QuoteProduct> getQuoteProducts() {
+        return quoteProducts;
+    }
 
-
+    public void setQuoteProducts(Set<QuoteProduct> quoteProducts) {
+        this.quoteProducts = quoteProducts;
+        updateTotal();
+    }
 }

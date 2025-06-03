@@ -51,7 +51,7 @@ public class Client {
         this.phoneNumber = phoneNumber;
     }
 
-    public List<Quote> gQuotes(){
+    public List<Quote> getQuotes(){
         return quotes;
     }
 
