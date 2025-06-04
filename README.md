@@ -49,6 +49,26 @@ spring.datasource.password=${MYSQL_PASSWORD}
 
 ---
 
+### 🧪 Ejecución local
+
+- Clona el repositorio:
+
+```bash
+git clone https://github.com/Esteban-RG/quotes-app.git
+cd quotes
+```
+
+- Inicia la base de datos (puedes usar Docker o XAMPP).
+
+- Ejecuta el proyecto:
+
+```bash
+cd backend
+./mvnw spring-boot:run
+```
+
+---
+
 ### ✅ TODOs / Cosas por hacer:
 
 - Frontend
