@@ -33,13 +33,12 @@ public class Quote {
     @OneToMany(mappedBy = "quote", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<QuoteProduct> quoteProducts = new HashSet<>();
 
-    protected Quote() {
-        this(null,null,null,null);
+    public Quote() {
+        this(null,null,null);
     }
 
-    Quote(String project, Float total, String date, Client client){
+    Quote(String project, String date, Client client){
         this.project = project;
-        this.total = total;
         this.date = date;
         this.client = client;
     }
@@ -52,8 +51,12 @@ public class Quote {
             .findFirst()
             .orElse(null);
 
-        if (existingQuoteProduct != null) {
+        // Si la cantidad es menor o igual a cero, borrar el producto
+        if (quantity <= 0) {
+            this.removeProduct(product);
+        } else if (existingQuoteProduct != null) {
             // Si el producto existe, actualizar la cantidad
+
             existingQuoteProduct.setQuantity(existingQuoteProduct.getQuantity() + quantity);
         } else {
             // Si el producto no existe, crear uno nuevo
@@ -109,6 +112,11 @@ public class Quote {
     }
 
     // Getters 
+
+    public Long getId(){
+        return this.id;
+    }
+
     public String getProject(){
         return this.project;
     }
