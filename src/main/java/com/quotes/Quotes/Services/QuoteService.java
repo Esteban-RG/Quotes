@@ -20,7 +20,6 @@ import com.quotes.Quotes.Model.Product;
 import com.quotes.Quotes.Model.Quote;
 import com.quotes.Quotes.Repository.ClientRepository;
 import com.quotes.Quotes.Repository.ProductRepository;
-import com.quotes.Quotes.Repository.QuoteProductRepository;
 import com.quotes.Quotes.Repository.QuoteRepository;
 
 import jakarta.transaction.Transactional;
@@ -28,14 +27,12 @@ import jakarta.transaction.Transactional;
 @Service
 public class QuoteService {
     private final QuoteRepository repository;
-    private final QuoteProductRepository quoteProductRepository;
     private final ClientRepository clientRepository;
     private final ProductRepository productRepository;
     
 
-    public QuoteService(QuoteRepository repository, QuoteProductRepository quoteProductRepository, ClientRepository clientRepository, ProductRepository productRepository){
+    public QuoteService(QuoteRepository repository, ClientRepository clientRepository, ProductRepository productRepository){
         this.repository = repository;
-        this.quoteProductRepository = quoteProductRepository;
         this.clientRepository = clientRepository;
         this.productRepository = productRepository;
     }
