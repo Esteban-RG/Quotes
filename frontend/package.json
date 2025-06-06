@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "targets": {
     "default": {
-      "distDir": "../../target/classes/static"
+      "distDir": "../target/classes/static"
     }
   },
   "dependencies": {
