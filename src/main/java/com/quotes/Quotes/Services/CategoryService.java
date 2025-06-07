@@ -10,6 +10,8 @@ import com.quotes.Quotes.DTO.CategoryDTO;
 import com.quotes.Quotes.Model.Category;
 import com.quotes.Quotes.Repository.CategoryRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class CategoryService {
     private final CategoryRepository repository;
@@ -35,6 +37,7 @@ public class CategoryService {
         return repository.save(category);
     }
 
+    @Transactional
     public Optional<Category> update(Long id, Category newData) {
         return repository.findById(id)
                 .map(existing -> {
@@ -43,10 +46,22 @@ public class CategoryService {
                 });
     }
 
+    @Transactional
     public boolean delete(Long id) {
-        return repository.findById(id).map(category -> {
-            repository.delete(category);
-            return true;
-        }).orElse(false);
+        Optional<Category> optionalCategory = repository.findById(id);
+
+        if (optionalCategory.isEmpty()) {
+            return false; 
+        }
+
+        Category category = optionalCategory.get();
+
+        if (!category.getProducts().isEmpty()) {
+            return false;
+        }
+
+        repository.delete(category);
+        return true;
     }
+
 }

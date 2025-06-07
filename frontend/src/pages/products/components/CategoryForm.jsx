@@ -6,7 +6,13 @@ export default function CategoryForm(props) {
         name:""
     });
 
-    
+    const handleChange = (e) => {
+      const { name, value, type, files } = e.target;
+      setFormData(prev => ({
+        ...prev,
+        [name]: type === "file" ? files[0] : value
+      }));
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -43,7 +49,7 @@ export default function CategoryForm(props) {
                     id="name" 
                     name="name"
                     placeholder="Ingrese el nombre de la categoria"
-                    value={formData.name} 
+                    onChange={handleChange}
                     required />
                 </div>
 

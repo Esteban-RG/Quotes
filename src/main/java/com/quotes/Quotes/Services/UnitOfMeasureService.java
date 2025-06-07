@@ -10,6 +10,8 @@ import com.quotes.Quotes.DTO.UnitOfMeasureDTO;
 import com.quotes.Quotes.Model.UnitOfMeasure;
 import com.quotes.Quotes.Repository.UnitOfMeasureRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class UnitOfMeasureService {
     private final UnitOfMeasureRepository repository;
@@ -35,6 +37,7 @@ public class UnitOfMeasureService {
         return repository.save(unitOfMeasure);
     }
 
+    @Transactional
     public Optional<UnitOfMeasure> update(Long id, UnitOfMeasure newData) {
         return repository.findById(id)
                 .map(existing -> {
@@ -43,10 +46,21 @@ public class UnitOfMeasureService {
                 });
     }
 
+    @Transactional
     public boolean delete(Long id) {
-        return repository.findById(id).map(unitOfMeasure -> {
-            repository.delete(unitOfMeasure);
-            return true;
-        }).orElse(false);
+        Optional<UnitOfMeasure> optionalUnit = repository.findById(id);
+
+        if (optionalUnit.isEmpty()) {
+            return false; 
+        }
+
+        UnitOfMeasure unit = optionalUnit.get();
+
+        if (!unit.getProducts().isEmpty()) {
+            return false;
+        }
+
+        repository.delete(unit);
+        return true;
     }
 }

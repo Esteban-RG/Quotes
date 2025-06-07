@@ -71,7 +71,7 @@ cd backend
 
 ### ✅ TODOs / Cosas por hacer:
 
-- Frontend
+- Agregar DTO's a entidades (Category , UnitOfMeasure)
 
 ---
 

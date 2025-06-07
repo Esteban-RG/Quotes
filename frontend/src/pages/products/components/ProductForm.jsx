@@ -21,6 +21,7 @@ export default function ProductForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    
     // Envía el formulario al backend 
     fetch("/api/products", {
       method: "POST",
@@ -39,6 +40,9 @@ export default function ProductForm(props) {
         console.error("Error al enviar:", err);
         alert("Error al guardar el producto");
       });
+
+    
+
   };
 
   return (
@@ -56,7 +60,7 @@ export default function ProductForm(props) {
                     onChange={handleChange}
                     required
                     >
-                    <option value="" disabled>Seleccione categoría</option>
+                    <option value="" >Seleccione categoría</option>
                     {props.categories.map(cat => (
                         <option key={cat.id} value={cat.id}>{cat.name}</option>
                     ))}
@@ -86,7 +90,7 @@ export default function ProductForm(props) {
                     onChange={handleChange}
                     required
                     >
-                    <option value="" disabled>Seleccione unidad de medida</option>
+                    <option value="">Seleccione unidad de medida</option>
                     {props.units.map(unit => (
                         <option key={unit.id} value={unit.id}>{unit.name}</option>
                     ))}
