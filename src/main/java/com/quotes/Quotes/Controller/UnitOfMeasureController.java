@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.quotes.Quotes.DTO.UnitOfMeasureCreateDTO;
 import com.quotes.Quotes.DTO.UnitOfMeasureDTO;
 import com.quotes.Quotes.Model.UnitOfMeasure;
 import com.quotes.Quotes.Services.UnitOfMeasureService;
@@ -45,15 +46,27 @@ public class UnitOfMeasureController {
     }
 
     @PostMapping
-    public ResponseEntity<UnitOfMeasure> create(@RequestBody UnitOfMeasure category){
-        UnitOfMeasure saved = service.create(category);
-        return ResponseEntity .status(HttpStatus.CREATED).body(saved);
+    public ResponseEntity<UnitOfMeasureDTO> create(@RequestBody UnitOfMeasureCreateDTO dto){
+        UnitOfMeasure created = service.create(dto);
+
+        UnitOfMeasureDTO response = new UnitOfMeasureDTO(
+            created.getId(),
+            created.getName()
+        );
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UnitOfMeasure> update(@PathVariable Long id, @RequestBody UnitOfMeasure updated){
-        return service.update(id, updated)
-        .map(ResponseEntity::ok)
+    public ResponseEntity<UnitOfMeasureDTO> update(@PathVariable Long id, @RequestBody UnitOfMeasureCreateDTO dto){
+        return service.update(id, dto)
+        .map(updated -> {
+            UnitOfMeasureDTO response = new UnitOfMeasureDTO(
+                updated.getId(),
+                updated.getName()
+            );
+            return ResponseEntity.ok(response);
+        })
         .orElse(ResponseEntity.notFound().build());
     }
 

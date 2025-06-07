@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.quotes.Quotes.DTO.CategoryCreateDTO;
 import com.quotes.Quotes.DTO.CategoryDTO;
 import com.quotes.Quotes.Model.Category;
 import com.quotes.Quotes.Services.CategoryService;
@@ -45,15 +46,27 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<Category> create(@RequestBody Category category){
-        Category saved = service.create(category);
-        return ResponseEntity .status(HttpStatus.CREATED).body(saved);
+    public ResponseEntity<CategoryDTO> create(@RequestBody CategoryCreateDTO dto){
+        Category created = service.create(dto);
+
+        CategoryDTO response = new CategoryDTO(
+            created.getId(),
+            created.getName()
+        );
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Category> update(@PathVariable Long id, @RequestBody Category updated){
-        return service.update(id, updated)
-        .map(ResponseEntity::ok)
+    public ResponseEntity<CategoryDTO> update(@PathVariable Long id, @RequestBody CategoryCreateDTO dto){
+        return service.update(id, dto)
+        .map(updated -> {
+            CategoryDTO response = new CategoryDTO(
+                updated.getId(),
+                updated.getName()
+            );
+            return ResponseEntity.ok(response);
+        })
         .orElse(ResponseEntity.notFound().build());
     }
 

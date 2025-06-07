@@ -21,7 +21,7 @@ public class UnitOfMeasure {
     @OneToMany(mappedBy = "unitOfMeasure", fetch = FetchType.LAZY)
     private List<Product> products = new ArrayList<>();
 
-    protected UnitOfMeasure(){
+    public UnitOfMeasure(){
         this(null);
     }
 

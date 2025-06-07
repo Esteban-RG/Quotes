@@ -21,7 +21,7 @@ public class Category {
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY )
     private List<Product> products = new ArrayList<>();
 
-    protected Category(){
+    public Category(){
         this(null);
     }
 

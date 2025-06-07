@@ -27,7 +27,7 @@ public class Client {
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Quote> quotes = new ArrayList<>();
 
-    protected Client() {
+    public Client() {
         this(null, null, null);
     }
 

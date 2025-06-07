@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.quotes.Quotes.DTO.UnitOfMeasureCreateDTO;
 import com.quotes.Quotes.DTO.UnitOfMeasureDTO;
 import com.quotes.Quotes.Model.UnitOfMeasure;
 import com.quotes.Quotes.Repository.UnitOfMeasureRepository;
@@ -33,15 +34,18 @@ public class UnitOfMeasureService {
         .map(unit -> new UnitOfMeasureDTO(unit.getId(), unit.getName()));
     }
 
-    public UnitOfMeasure create(UnitOfMeasure unitOfMeasure){
+    public UnitOfMeasure create(UnitOfMeasureCreateDTO dto){
+        UnitOfMeasure unitOfMeasure = new UnitOfMeasure();
+        unitOfMeasure.setName(dto.name());
+
         return repository.save(unitOfMeasure);
     }
 
     @Transactional
-    public Optional<UnitOfMeasure> update(Long id, UnitOfMeasure newData) {
+    public Optional<UnitOfMeasure> update(Long id, UnitOfMeasureCreateDTO newData) {
         return repository.findById(id)
                 .map(existing -> {
-                    existing.setName(newData.getName());
+                    existing.setName(newData.name());
                     return repository.save(existing);
                 });
     }

@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.quotes.Quotes.DTO.CategoryCreateDTO;
 import com.quotes.Quotes.DTO.CategoryDTO;
 import com.quotes.Quotes.Model.Category;
 import com.quotes.Quotes.Repository.CategoryRepository;
@@ -33,15 +34,18 @@ public class CategoryService {
         .map(cat -> new CategoryDTO(cat.getId(), cat.getName()));
     }
 
-    public Category create(Category category){
+    public Category create(CategoryCreateDTO dto){
+        Category category = new Category();
+        category.setName(dto.name());
+
         return repository.save(category);
     }
 
     @Transactional
-    public Optional<Category> update(Long id, Category newData) {
+    public Optional<Category> update(Long id, CategoryCreateDTO newData) {
         return repository.findById(id)
                 .map(existing -> {
-                    existing.setName(newData.getName());
+                    existing.setName(newData.name());
                     return repository.save(existing);
                 });
     }

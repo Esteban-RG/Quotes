@@ -1,6 +1,6 @@
 # 📦 Quotes App
 
-Aplicación web de gestión de productos con categorías y unidades de medida. Permite registrar productos con imagen, descripción, precio y relaciones con otras entidades. Backend desarrollado en **Spring Boot**, frontend en **React** y base de datos en **MySQL**.
+Aplicación web de gestión de productos con categorías y unidades de medida. Permite registrar productos con descripción, precio y relaciones con otras entidades para generar cotizaciones. Backend desarrollado en **Spring Boot**, frontend en **React** y base de datos en **MySQL**.
 
 ---
 
@@ -71,7 +71,9 @@ cd backend
 
 ### ✅ TODOs / Cosas por hacer:
 
-- Agregar DTO's a entidades (Category , UnitOfMeasure)
+- Interfaz para gestionar clientes
+- interfaz para gestionar cotizaciones
+-
 
 ---
 

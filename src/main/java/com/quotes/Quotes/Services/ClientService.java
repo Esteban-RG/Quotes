@@ -6,9 +6,12 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.quotes.Quotes.DTO.ClientCreateDTO;
 import com.quotes.Quotes.DTO.ClientDTO;
 import com.quotes.Quotes.Model.Client;
 import com.quotes.Quotes.Repository.ClientRepository;
+
+import jakarta.transaction.Transactional;
 
 @Service
 public class ClientService {
@@ -31,14 +34,22 @@ public class ClientService {
         .map(client  -> new ClientDTO(client .getId(), client .getEmail(), client .getName(), client .getPhoneNumber()));
     }
 
-    public Client create(Client product){
-        return repository.save(product);
+    public Client create(ClientCreateDTO dto){
+        Client client = new Client();
+        client.setName(dto.name());
+        client.setEmail(dto.email());
+        client.setPhoneNumber(dto.phoneNumber());
+
+        return repository.save(client);
     }
 
-    public Optional<Client> update(Long id, Client newData) {
+    @Transactional
+    public Optional<Client> update(Long id, ClientCreateDTO newData) {
         return repository.findById(id)
                 .map(existing -> {
-                    existing.setName(newData.getName());
+                    existing.setName(newData.name());
+                    existing.setEmail(newData.email());
+                    existing.setPhoneNumber(newData.phoneNumber());
                     return repository.save(existing);
                 });
     }

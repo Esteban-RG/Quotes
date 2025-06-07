@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.quotes.Quotes.DTO.ClientCreateDTO;
 import com.quotes.Quotes.DTO.ClientDTO;
 import com.quotes.Quotes.Model.Client;
 import com.quotes.Quotes.Services.ClientService;
@@ -45,15 +46,31 @@ public class ClientController {
     }
 
     @PostMapping
-    public ResponseEntity<Client> create(@RequestBody Client category){
-        Client saved = service.create(category);
-        return ResponseEntity .status(HttpStatus.CREATED).body(saved);
+    public ResponseEntity<ClientDTO> create(@RequestBody ClientCreateDTO dto){
+        Client created = service.create(dto);
+
+        ClientDTO response = new ClientDTO(
+            created.getId(),
+            created.getName(),
+            created.getEmail(),
+            created.getPhoneNumber()
+        );
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Client> update(@PathVariable Long id, @RequestBody Client updated){
-        return service.update(id, updated)
-        .map(ResponseEntity::ok)
+    public ResponseEntity<ClientDTO> update(@PathVariable Long id, @RequestBody ClientCreateDTO dto){
+        return service.update(id, dto)
+        .map(updated -> {
+            ClientDTO response = new ClientDTO(
+                updated.getId(),
+                updated.getName(),
+                updated.getEmail(),
+                updated.getPhoneNumber()
+            );
+            return ResponseEntity.ok(response);
+        })
         .orElse(ResponseEntity.notFound().build());
     }
 
