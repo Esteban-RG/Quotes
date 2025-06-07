@@ -6,6 +6,9 @@ import ProductTable from "./components/ProductTable";
 import Modal from "../../components/Modal";
 import CategoryForm from "./components/CategoryForm";
 import UnitForm from "./components/UnitForm";
+import CategoryForm from "./components/CategoryForm";
+import CategoryTable from "./components/CategoryTable";
+import UnitTable from "./components/UnitTable";
 
 export default function Products() {
     const [categories, setCategories] = useState([]);
@@ -76,6 +79,17 @@ export default function Products() {
             <Modal id='NewUnit' title="Registrar Unidad de Medida">
                 <UnitForm onUnitAdded={fetchUnits} />
             </Modal>
+            
+            <Modal id='ShowCategories' title='Categorias'>
+                <CategoryTable categories={categories} />            
+            </Modal>
+            
+            <Modal id='ShowUnits' title='Unidades de medida'>
+                <UnitTable units={units} />
+            </Modal>
+
+
+
         </section>
         </>
     
