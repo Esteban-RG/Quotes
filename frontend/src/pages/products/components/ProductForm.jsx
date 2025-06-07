@@ -21,7 +21,7 @@ export default function ProductForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Envía el formulario al backend (ajusta la ruta según tu backend)
+    // Envía el formulario al backend 
     fetch("/api/products", {
       method: "POST",
       headers: {
@@ -33,6 +33,7 @@ export default function ProductForm(props) {
       .then(data => {
         alert("Producto guardado correctamente");
         console.log(data);
+        props.onProductAdded();
       })
       .catch(err => {
         console.error("Error al enviar:", err);
@@ -92,10 +93,10 @@ export default function ProductForm(props) {
                     </select>
                 </div>
                 <div className="col-4 col-lg-2 align-content-center">
-                    <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#NewMeasurement">
+                    <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#NewUnit">
                     <i className="fa fa-plus"></i>
                     </button>
-                    <button type="button" className="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#ShowMeasurements">
+                    <button type="button" className="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#ShowUnits">
                     <i className="fa fa-eye"></i>
                     </button>
                 </div>
@@ -151,5 +152,6 @@ export default function ProductForm(props) {
         {/* Botón */}
         <button type="submit" className="btn btn-primary col-12">Guardar</button>
     </form>
+   
   );
 }

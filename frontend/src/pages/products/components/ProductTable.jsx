@@ -16,7 +16,7 @@ export default function ProductTable(props) {
                 }
         
                 alert("Producto eliminado correctamente");
-                // Actualizar tabla
+                props.onProductDeleted();
             } catch (error) {
                 console.error("Error eliminando producto:", error);
                 alert("Hubo un error al eliminar el producto");
