@@ -23,7 +23,7 @@ public class Product {
     @Column(name = "price", nullable = false)
     private Float price;
 
-    @Column(name = "img_path", nullable = false)
+    @Column(name = "img_path", nullable = true)
     private String img_path;
 
     @ManyToOne(fetch = FetchType.EAGER)
