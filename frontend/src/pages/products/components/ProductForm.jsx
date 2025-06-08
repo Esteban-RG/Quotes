@@ -4,7 +4,7 @@ export default function ProductForm(props) {
   
   const [formData, setFormData] = useState({
     description: "",
-    imgPath: "test",
+    imgPath: "",
     price: "",
     categoryId: "",
     unitOfMeasureId: "",

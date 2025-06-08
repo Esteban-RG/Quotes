@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function UnitTable({ units }) {
+export default function UnitTable({ units , reloadUnits}) {
     const [editedCategories, setEditedCategories] = useState([]);
 
     useEffect(() => {
@@ -49,6 +49,8 @@ export default function UnitTable({ units }) {
                     cat.id === id ? { ...cat, isEditing: false } : cat
                 )
             );
+
+            reloadUnits();
         } catch (error) {
             console.error("Error al guardar la categoría:", error);
         }
@@ -71,8 +73,12 @@ export default function UnitTable({ units }) {
             setEditedCategories(prev =>
                 prev.filter(cat => cat.id !== id)
             );
+
+            reloadUnits();
+
         } catch (error) {
             console.error("Error al eliminar la categoría:", error);
+            alert(error.m);
         }
     };
     

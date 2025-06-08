@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function CategoryTable({ categories }) {
+export default function CategoryTable({ categories, reloadCategories }) {
     const [editedCategories, setEditedCategories] = useState([]);
 
     useEffect(() => {
@@ -49,6 +49,9 @@ export default function CategoryTable({ categories }) {
                     cat.id === id ? { ...cat, isEditing: false } : cat
                 )
             );
+            
+            reloadCategories();
+
         } catch (error) {
             console.error("Error al guardar la categoría:", error);
         }
@@ -71,6 +74,9 @@ export default function CategoryTable({ categories }) {
             setEditedCategories(prev =>
                 prev.filter(cat => cat.id !== id)
             );
+
+            reloadCategories();
+
         } catch (error) {
             console.error("Error al eliminar la categoría:", error);
         }

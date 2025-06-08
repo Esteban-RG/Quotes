@@ -43,13 +43,19 @@ export default function Products() {
 
     }, []);
 
+    const [showForm, setShowForm] = useState(false);
+
+    const toggleForm = () => {
+        setShowForm(prev => !prev);
+    };
+
 
     return (
 
         <>
         
         <section className="container-fluid">
-            <div className="new row justify-content-center">
+            <div className={`new row justify-content-center ${showForm ? '' : 'd-none'}`}>
                 <div className="card col-sm-11 col-md-7 col-lg-6 shadow p-3 mb-5 bg-white border-0 rounded">
                 <div className="card-body">
                     <h2 className="text-center">Registrar producto</h2>
@@ -64,7 +70,8 @@ export default function Products() {
             <div className="row mb-4">
                 <div className="card col-12 shadow mb-5 rounded border-0">
                     <div className="card-body">
-                        {/* <FiltersAndSearch  categories={categories} units={units} /> */}
+
+                        <FiltersAndSearch  categories={categories} toggleForm={toggleForm} showForm={showForm}/>
                         <ProductTable products={products} onProductAdded={fetchProducts} onProductDeleted={fetchProducts}/>
                     </div>
                 </div>
@@ -81,11 +88,11 @@ export default function Products() {
             </Modal>
             
             <Modal id='ShowCategories' title='Categorias'>
-                <CategoryTable categories={categories} />            
+                <CategoryTable categories={categories} reloadCategories={fetchCategories} />            
             </Modal>
             
             <Modal id='ShowUnits' title='Unidades de medida'>
-                <UnitTable units={units} />
+                <UnitTable units={units} reloadUnits={fetchUnits}/>
             </Modal>
 
 

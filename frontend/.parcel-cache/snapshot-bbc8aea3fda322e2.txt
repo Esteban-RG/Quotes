@@ -1154,7 +1154,7 @@
 107/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@swc/helpers/src/_non_iterable_spread.mjs1748842167316338829 0
 127/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/workers/test/integration/workerfarm/reverse-handle.js1748842167093008292 0
 117/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/workers/test/integration/workerfarm/ping.js1748842167073008543 0
-103/home/estebanr/Documentos/SpringBoot/Quotes/frontend/src/pages/products/components/FiltersAndSearch.jsx1749183334792619110 0
+103/home/estebanr/Documentos/SpringBoot/Quotes/frontend/src/pages/products/components/FiltersAndSearch.jsx1749341563509010841 0
 93/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/.bin/update-browserslist-db1748842167539669366 0
 103/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/core/lib/public/Dependency.js1748842167163007416 0
 82/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/LICENSE1748841933329368665 0
@@ -1588,7 +1588,7 @@
 122/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/glob/dist/cjs/src/has-magic.js.map1748841933742696233 0
 120/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/package-manager/test/fixtures/packages/foo-2.01748842167136341083 1
 106/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/core/lib/requests/PathRequest.js1748842167216340081 0
-70/home/estebanr/Documentos/SpringBoot/Quotes/frontend/package-lock.json1749339100634309236 0
+70/home/estebanr/Documentos/SpringBoot/Quotes/frontend/package-lock.json1749341571878903139 0
 103/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/unique-slug/lib1748841933542699023 1
 108/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/tuf-js/dist/index.js1748841933542699023 0
 97/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/caniuse-lite/data/regions/ZA.js1748842167396337827 0
@@ -1715,7 +1715,7 @@
 88/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/diagnostic/lib1748842166986342961 1
 78/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/lmdb/LICENSE1748842167063008668 0
 104/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/lib/utils/explain-eresolve.js1748841933469366712 0
-96/home/estebanr/Documentos/SpringBoot/Quotes/frontend/src/pages/products/components/UnitTable.jsx1749276433831606119 0
+96/home/estebanr/Documentos/SpringBoot/Quotes/frontend/src/pages/products/components/UnitTable.jsx1749340230882957526 0
 106/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/process/browser.js1748841933439367131 0
 100/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/core/lib/public/Symbols.js1748842167233006539 0
 102/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/diagnostic/src/diagnostic.js1748842166956343336 0
@@ -2686,7 +2686,7 @@
 113/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/core/test/fixtures/context/package.json1748842167246339705 0
 111/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/semver/functions/inc.js1748841933509366154 0
 93/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/rust/src/browser.js1748842166956343336 0
-98/home/estebanr/Documentos/SpringBoot/Quotes/frontend/src/pages/products/components/ProductForm.jsx1749275305105441905 0
+98/home/estebanr/Documentos/SpringBoot/Quotes/frontend/src/pages/products/components/ProductForm.jsx1749340374271073487 0
 96/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/depd/lib1748841933519366014 1
 105/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@swc/helpers/_/_assert_this_initialized1748842167213006790 1
 98/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/core/src/public/Asset.js1748842167116341333 0
@@ -2902,12 +2902,12 @@
 114/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/cacache/lib/memoization.js1748841933576031891 0
 93/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/events/src/index.js1748842166986342961 0
 93/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/supports-color/package.json1748842166939676879 0
-83/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@msgpackr-extract1749339100604309636 1
+83/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@msgpackr-extract1749341571845570234 1
 95/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/type-fest/source/mutable.d.ts1748842167053008793 0
 96/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/utils/src/ansi-html.js1748842166979676378 0
 108/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/transformer-babel/lib/constants.js1748842167009676002 0
 110/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/minipass-flush/LICENSE1748841933346035100 0
-84/home/estebanr/Documentos/SpringBoot/Quotes/frontend/src/pages/products/Products.jsx1749276327721466932 0
+84/home/estebanr/Documentos/SpringBoot/Quotes/frontend/src/pages/products/Products.jsx1749341488119981118 0
 99/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/postcss-value-parser/package.json1748842166976343086 0
 120/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/glob/dist/cjs/src/pattern.js.map1748841933746029519 0
 106/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/clone/package.json1748841933716029938 0
@@ -3055,7 +3055,7 @@
 92/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/picomatch/lib/picomatch.js1748842166966343211 0
 117/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@swc/helpers/src/_class_apply_descriptor_update.mjs1748842167293005788 0
 133/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/@pkgjs/parseargs/examples/is-default-value.js1748841933569365317 0
-84/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/.package-lock.json1749339100650975681 0
+84/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/.package-lock.json1749341571892236301 0
 104/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/caniuse-lite/data/features/css-grid.js1748842167213006790 0
 113/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/caniuse-lite/data/features/css-cascade-scope.js1748842167199673623 0
 113/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/semver/functions/rsort.js1748841933616031333 0
@@ -3353,7 +3353,7 @@
 108/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/caniuse-lite/data/features/css3-cursors.js1748842167243006414 0
 97/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/is-lambda1748841933722696512 1
 136/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin/node-gyp.cmd1748841933412700836 0
-70/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@swc1749339100600976346 1
+70/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@swc1749341571845570234 1
 113/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/core/test/fixtures/glob-like/[entry].js1748842167093008292 0
 112/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/has-unicode/package.json1748841933722696512 0
 87/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/rust/index.js1748842166969676503 0
@@ -3861,7 +3861,7 @@
 98/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/utils/src/http-server.js1748842167073008543 0
 98/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@swc/helpers/_/_array_with_holes1748842167209673498 1
 105/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/react-router/dist/development/index.mjs1748846628000241254 0
-100/home/estebanr/Documentos/SpringBoot/Quotes/frontend/src/pages/products/components/CategoryTable.jsx1749273976956994186 0
+100/home/estebanr/Documentos/SpringBoot/Quotes/frontend/src/pages/products/components/CategoryTable.jsx1749339801501816330 0
 88/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/react-dom/package.json1748842644570166305 0
 119/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/signal-exit/dist/cjs/signals.js1748841933626031193 0
 94/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/man/man1/npm-diff.11748841933402700976 0
@@ -4027,7 +4027,7 @@
 100/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/type-fest/source/partial-deep.d.ts1748842167059675376 0
 108/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/libnpmhook/README.md1748841933766029240 0
 127/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/graph/test/integration/adjacency-list-shared-array.js1748842166943010170 0
-65/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules1749339100600976346 1
+65/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules1749341571845570234 1
 112/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/sigstore/dist/util/ua.js1748841933642697627 0
 120/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/rimraf/node_modules/glob/LICENSE1748841933392701115 0
 94/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/transformer-json/lib1748842166929677004 1
@@ -4424,7 +4424,7 @@
 84/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/picomatch/index.js1748842166939676879 0
 79/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/picomatch/lib1748842166983009669 1
 106/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/caniuse-lite/data/features/selectlist.js1748842167373004786 0
-73/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel1749339100604309636 1
+73/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel1749341571845570234 1
 92/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/picomatch/lib/constants.js1748842166933010295 0
 97/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@parcel/runtime-browser-hmr/lib1748842166996342836 1
 91/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/ordered-binary/index.d.ts1748842167033009043 0
@@ -4962,7 +4962,7 @@
 97/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/caniuse-lite/data/regions/DJ.js1748842167246339705 0
 97/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/caniuse-lite/data/regions/PT.js1748842167353005037 0
 112/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/node_modules/humanize-ms/package.json1748841933722696512 0
-71/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@lmdb1749339100604309636 1
+71/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/@lmdb1749341571845570234 1
 115/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/caniuse-lite/data/features/input-file-multiple.js1748842167276339330 0
 114/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node/node_modules/npm/docs/content/configuring-npm/install.md1748841933752696093 0
 114/home/estebanr/Documentos/SpringBoot/Quotes/frontend/node_modules/caniuse-lite/data/features/link-rel-prerender.js1748842167289672496 0

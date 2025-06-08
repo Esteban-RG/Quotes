@@ -1,4 +1,4 @@
-export default function FiltersAndSearch(props){
+export default function FiltersAndSearch({categories, toggleForm, showForm}){
     
     
     return (
@@ -7,8 +7,12 @@ export default function FiltersAndSearch(props){
 
             <div className="col-lg-2 col-sm-3 mb-3">
                 <div className="input-group">
-                    <button className="btn btn-primary" id="showForm"><i className="fas fa-plus"> </i>
-                        Nuevo</button>
+                    <button className="btn btn-primary" 
+                    id="showForm"
+                    onClick={toggleForm}>
+                        <i className={`fas ${showForm ? 'fa-times' : 'fa-plus'}`}> </i>
+                        {' '}{showForm ? 'Cancelar' : 'Nuevo'}
+                        </button>
                 </div>
             </div>
 
@@ -19,8 +23,8 @@ export default function FiltersAndSearch(props){
                         <i className="fas fa-filter"></i>
                     </span>
                     <select className="form-select" id="categoryFilter">
-                        <option value="">Todas las categorías</option>
-                                {props.categories.map(cat => (
+                        <option value="0">Todas las categorías</option>
+                                {categories.map(cat => (
                         <option key={cat.id} value={cat.id}>{cat.name}</option>
                         ))}
                     </select>
@@ -34,6 +38,7 @@ export default function FiltersAndSearch(props){
                     </span>
                     <input type="text" id="searchInput" className="form-control"
                         placeholder="Buscar productos..." />
+
                     <button className="btn btn-outline-secondary" type="button" id="clearSearch">
                         <i className="fas fa-times"></i>
                     </button>
