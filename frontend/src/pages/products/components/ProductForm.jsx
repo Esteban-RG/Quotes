@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function ProductForm(props) {
+export default function ProductForm({reloadProducts, categories, units, action, product}) {
   
   const [formData, setFormData] = useState({
     description: "",
@@ -9,6 +9,18 @@ export default function ProductForm(props) {
     categoryId: "",
     unitOfMeasureId: "",
   });
+
+  useEffect(() => {
+    if (product) {
+      setFormData({
+        description: product.description || "",
+        imgPath: product.img_path || "",
+        price: product.price || "",
+        categoryId: product.category?.id || "",
+        unitOfMeasureId: product.unitOfMeasure?.id || "",
+      });
+    }
+  }, [product]);
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
@@ -21,28 +33,28 @@ export default function ProductForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const method = action === "update" ? "PUT" : "POST";
+    const url = action === "update" ? `/api/products/${product.id}` : "/api/products";
+
     
-    // Envía el formulario al backend 
-    fetch("/api/products", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData)
-    })
-      .then(res => res.json())
-      .then(data => {
-        alert("Producto guardado correctamente");
-        console.log(data);
-        props.onProductAdded();
+      fetch(url, {
+        method: method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData)
       })
-      .catch(err => {
-        console.error("Error al enviar:", err);
-        alert("Error al guardar el producto");
-      });
-
-    
-
+        .then(res => res.json())
+        .then(data => {
+          alert("Producto guardado correctamente");
+          console.log(data);
+          if (!product) {reloadProducts();}
+        })
+        .catch(err => {
+          console.error("Error al enviar:", err);
+          alert("Error al guardar el producto");
+        });
+  
   };
 
   return (
@@ -56,13 +68,13 @@ export default function ProductForm(props) {
                     id="categoryId"
                     name="categoryId"
                     className="form-control"
-                    value={formData.category}
+                    value={formData.categoryId}
                     onChange={handleChange}
                     required
                     >
                     <option value="" >Seleccione categoría</option>
-                    {props.categories.map(cat => (
-                        <option key={cat.id} value={cat.id}>{cat.name}</option>
+                    {categories.map(cat => (
+                        <option key={cat.id} value={cat.id}>{cat.name} {}</option>
                     ))}
                     </select>
                 </div>
@@ -70,6 +82,7 @@ export default function ProductForm(props) {
                     <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#NewCategory">
                     <i className="fa fa-plus"></i>
                     </button>
+                    <> </>
                     <button type="button" className="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#ShowCategories">
                     <i className="fa fa-eye"></i>
                     </button>
@@ -86,12 +99,12 @@ export default function ProductForm(props) {
                     id="unitOfMeasureId"
                     name="unitOfMeasureId"
                     className="form-control"
-                    value={formData.measurement}
+                    value={formData.unitOfMeasureId}
                     onChange={handleChange}
                     required
                     >
                     <option value="">Seleccione unidad de medida</option>
-                    {props.units.map(unit => (
+                    {units.map(unit => (
                         <option key={unit.id} value={unit.id}>{unit.name}</option>
                     ))}
                     </select>
@@ -100,6 +113,7 @@ export default function ProductForm(props) {
                     <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#NewUnit">
                     <i className="fa fa-plus"></i>
                     </button>
+                    <> </>
                     <button type="button" className="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#ShowUnits">
                     <i className="fa fa-eye"></i>
                     </button>
@@ -148,6 +162,7 @@ export default function ProductForm(props) {
             id="image"
             name="image"
             accept="image/*"
+            value={formData.imgPath}
             onChange={handleChange}
             />
         </div>

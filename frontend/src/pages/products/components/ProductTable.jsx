@@ -1,3 +1,6 @@
+import { NavLink } from "react-router-dom";
+
+
 export default function ProductTable(props) {
 
     const handleDelete = async (productId) => {
@@ -101,9 +104,10 @@ export default function ProductTable(props) {
 
 
                             {/* Botón Editar */}
-                            <a href={`/edit-product/${product.id}`} className="btn btn-primary btn-sm" title="Editar" aria-label="Editar">
+                            <NavLink to={`/products/edit/${product.id}`} className="btn btn-primary btn-sm">
                                 <i className="fas fa-edit"></i>
-                            </a>
+                            </NavLink>
+                            
 
                             {/* Botón Eliminar */}
                             <button className="btn btn-danger btn-sm" title="Eliminar" aria-label="Eliminar"

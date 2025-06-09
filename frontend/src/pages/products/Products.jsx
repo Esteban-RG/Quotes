@@ -50,6 +50,8 @@ export default function Products() {
     };
 
 
+
+
     return (
 
         <>
@@ -59,7 +61,7 @@ export default function Products() {
                 <div className="card col-sm-11 col-md-7 col-lg-6 shadow p-3 mb-5 bg-white border-0 rounded">
                 <div className="card-body">
                     <h2 className="text-center">Registrar producto</h2>
-                    <ProductForm categories={categories} units={units} onProductAdded={fetchProducts} />
+                    <ProductForm categories={categories} units={units} reloadProducts={fetchProducts} action={"create"} />
                        
                 </div>
                 </div>
@@ -94,6 +96,8 @@ export default function Products() {
             <Modal id='ShowUnits' title='Unidades de medida'>
                 <UnitTable units={units} reloadUnits={fetchUnits}/>
             </Modal>
+
+            
 
 
 
