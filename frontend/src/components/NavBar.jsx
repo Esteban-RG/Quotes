@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg shadow p-3 mb-3" style={{ backgroundColor: "#55BCD1" }}>
+    <nav className="navbar navbar-expand-lg shadow p-3 mb-3" style={{ backgroundColor: "#52357B" }}>
       <div className="container-fluid">
         {/* 
         <NavLink className="navbar-brand" to="/">
@@ -17,23 +17,24 @@ export default function NavBar() {
         </button>
 
         <div className="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav ">
             <li className="nav-item">
-              <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+              <NavLink to="/" className={({ isActive }) => `nav-link text-white ${isActive ? 'active' : ''}`}>
                 Inicio
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/products" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+              <NavLink to="/products" className={({ isActive }) => `nav-link text-white ${isActive ? 'active' : ''}`}>
                 Productos
               </NavLink>
             </li>
+            {/*
             <li className="nav-item">
-              <NavLink to="/quotes" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+              <NavLink to="/quotes" className={({ isActive }) => `nav-link text-white ${isActive ? 'active' : ''}`}>
                 Cotizaciones
               </NavLink>
             </li>
-            
+            */}
           </ul>
         </div>
       </div>
