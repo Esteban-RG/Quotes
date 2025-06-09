@@ -32,3 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 .env
+
+/fronend/.parcel-cache
+.parcel-cache
