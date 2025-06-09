@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.quotes.Quotes.DTO.CategoryDTO;
-import com.quotes.Quotes.DTO.ClientDTO;
-import com.quotes.Quotes.DTO.ProductDTO;
-import com.quotes.Quotes.DTO.QuoteCreateDTO;
-import com.quotes.Quotes.DTO.QuoteDTO;
-import com.quotes.Quotes.DTO.QuoteProductDTO;
-import com.quotes.Quotes.DTO.UnitOfMeasureDTO;
+import com.quotes.Quotes.DTO.Category.CategoryDTO;
+import com.quotes.Quotes.DTO.Client.ClientDTO;
+import com.quotes.Quotes.DTO.Product.ProductDTO;
+import com.quotes.Quotes.DTO.Quote.QuoteCreateDTO;
+import com.quotes.Quotes.DTO.Quote.QuoteDTO;
+import com.quotes.Quotes.DTO.QuoteProduct.QuoteProductDTO;
+import com.quotes.Quotes.DTO.UnitOfMeasure.UnitOfMeasureDTO;
 import com.quotes.Quotes.Model.Quote;
 import com.quotes.Quotes.Services.QuoteService;
 

@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.quotes.Quotes.DTO.UnitOfMeasureCreateDTO;
-import com.quotes.Quotes.DTO.UnitOfMeasureDTO;
+import com.quotes.Quotes.DTO.UnitOfMeasure.UnitOfMeasureCreateDTO;
+import com.quotes.Quotes.DTO.UnitOfMeasure.UnitOfMeasureDTO;
 import com.quotes.Quotes.Model.UnitOfMeasure;
 import com.quotes.Quotes.Services.UnitOfMeasureService;
 

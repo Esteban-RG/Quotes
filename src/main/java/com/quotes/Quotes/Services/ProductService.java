@@ -5,11 +5,13 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
-import com.quotes.Quotes.DTO.CategoryDTO;
-import com.quotes.Quotes.DTO.ProductCreateDTO;
-import com.quotes.Quotes.DTO.ProductDTO;
-import com.quotes.Quotes.DTO.UnitOfMeasureDTO;
+import com.quotes.Quotes.DTO.Category.CategoryDTO;
+import com.quotes.Quotes.DTO.Product.ProductCreateDTO;
+import com.quotes.Quotes.DTO.Product.ProductDTO;
+import com.quotes.Quotes.DTO.Product.Search.SearchProduct;
+import com.quotes.Quotes.DTO.UnitOfMeasure.UnitOfMeasureDTO;
 import com.quotes.Quotes.Model.Category;
 import com.quotes.Quotes.Model.Product;
 import com.quotes.Quotes.Model.UnitOfMeasure;
@@ -110,4 +112,40 @@ public class ProductService {
             return true;
         }).orElse(false);
     }
+
+
+    public List<ProductDTO> search(SearchProduct search) {
+    List<Product> res;
+
+    boolean hasDescription = StringUtils.hasText(search.description());
+    boolean hasCategory = search.categoryId() != null && search.categoryId() != 0;
+
+    if (hasDescription && hasCategory) {
+        res = repository.findByCategoryAndDescription(search.categoryId(), search.description());
+    } else if (hasDescription) {
+        res = repository.findByDescriptionContaining(search.description());
+    } else if (hasCategory) {
+        res = repository.findByCategory(search.categoryId());
+    } else {
+        res = repository.findAll(); 
+    }
+
+    return res.stream()
+            .map(product -> new ProductDTO(
+                    product.getId(),
+                    product.getDescription(),
+                    product.getImgPath(),
+                    product.getPrice(),
+                    new CategoryDTO(
+                            product.getCategory().getId(),
+                            product.getCategory().getName()
+                    ),
+                    new UnitOfMeasureDTO(
+                            product.getUnitOfMeasure().getId(),
+                            product.getUnitOfMeasure().getName()
+                    )
+            ))
+            .collect(Collectors.toList());
+}
+
 }

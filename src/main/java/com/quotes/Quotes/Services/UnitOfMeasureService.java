@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.quotes.Quotes.DTO.UnitOfMeasureCreateDTO;
-import com.quotes.Quotes.DTO.UnitOfMeasureDTO;
+import com.quotes.Quotes.DTO.UnitOfMeasure.UnitOfMeasureCreateDTO;
+import com.quotes.Quotes.DTO.UnitOfMeasure.UnitOfMeasureDTO;
 import com.quotes.Quotes.Model.UnitOfMeasure;
 import com.quotes.Quotes.Repository.UnitOfMeasureRepository;
 

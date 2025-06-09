@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.quotes.Quotes.DTO.ClientCreateDTO;
-import com.quotes.Quotes.DTO.ClientDTO;
+import com.quotes.Quotes.DTO.Client.ClientCreateDTO;
+import com.quotes.Quotes.DTO.Client.ClientDTO;
 import com.quotes.Quotes.Model.Client;
 import com.quotes.Quotes.Services.ClientService;
 

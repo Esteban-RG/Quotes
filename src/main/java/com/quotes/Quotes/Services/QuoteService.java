@@ -7,14 +7,14 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.quotes.Quotes.DTO.CategoryDTO;
-import com.quotes.Quotes.DTO.ClientDTO;
-import com.quotes.Quotes.DTO.ProductDTO;
-import com.quotes.Quotes.DTO.QuoteCreateDTO;
-import com.quotes.Quotes.DTO.QuoteDTO;
-import com.quotes.Quotes.DTO.QuoteProductCreateDTO;
-import com.quotes.Quotes.DTO.QuoteProductDTO;
-import com.quotes.Quotes.DTO.UnitOfMeasureDTO;
+import com.quotes.Quotes.DTO.Category.CategoryDTO;
+import com.quotes.Quotes.DTO.Client.ClientDTO;
+import com.quotes.Quotes.DTO.Product.ProductDTO;
+import com.quotes.Quotes.DTO.Quote.QuoteCreateDTO;
+import com.quotes.Quotes.DTO.Quote.QuoteDTO;
+import com.quotes.Quotes.DTO.QuoteProduct.QuoteProductCreateDTO;
+import com.quotes.Quotes.DTO.QuoteProduct.QuoteProductDTO;
+import com.quotes.Quotes.DTO.UnitOfMeasure.UnitOfMeasureDTO;
 import com.quotes.Quotes.Model.Client;
 import com.quotes.Quotes.Model.Product;
 import com.quotes.Quotes.Model.Quote;

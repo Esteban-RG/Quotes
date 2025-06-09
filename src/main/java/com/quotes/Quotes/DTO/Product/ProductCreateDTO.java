@@ -1,4 +1,4 @@
-package com.quotes.Quotes.DTO;
+package com.quotes.Quotes.DTO.Product;
 
 public record ProductCreateDTO(
     String description,

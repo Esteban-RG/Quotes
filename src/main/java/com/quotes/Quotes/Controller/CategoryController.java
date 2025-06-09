@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.quotes.Quotes.DTO.CategoryCreateDTO;
-import com.quotes.Quotes.DTO.CategoryDTO;
+import com.quotes.Quotes.DTO.Category.CategoryCreateDTO;
+import com.quotes.Quotes.DTO.Category.CategoryDTO;
 import com.quotes.Quotes.Model.Category;
 import com.quotes.Quotes.Services.CategoryService;
 

@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.quotes.Quotes.DTO.CategoryDTO;
-import com.quotes.Quotes.DTO.ProductCreateDTO;
-import com.quotes.Quotes.DTO.ProductDTO;
-import com.quotes.Quotes.DTO.UnitOfMeasureDTO;
+import com.quotes.Quotes.DTO.Category.CategoryDTO;
+import com.quotes.Quotes.DTO.Product.ProductCreateDTO;
+import com.quotes.Quotes.DTO.Product.ProductDTO;
+import com.quotes.Quotes.DTO.Product.Search.SearchProduct;
+import com.quotes.Quotes.DTO.UnitOfMeasure.UnitOfMeasureDTO;
 import com.quotes.Quotes.Model.Product;
 import com.quotes.Quotes.Services.ProductService;
 
@@ -87,4 +88,15 @@ public class ProductController {
                 : ResponseEntity.notFound().build();
     }
 
+
+
+
+    // Search
+
+    @PostMapping("/search")
+    public List<ProductDTO> multiFieldSearch(@RequestBody SearchProduct search){
+        
+           return service.search(search);
+        
+    }
 }

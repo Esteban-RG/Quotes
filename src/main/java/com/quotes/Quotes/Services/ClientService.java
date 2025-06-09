@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.quotes.Quotes.DTO.ClientCreateDTO;
-import com.quotes.Quotes.DTO.ClientDTO;
+import com.quotes.Quotes.DTO.Client.ClientCreateDTO;
+import com.quotes.Quotes.DTO.Client.ClientDTO;
 import com.quotes.Quotes.Model.Client;
 import com.quotes.Quotes.Repository.ClientRepository;
 
