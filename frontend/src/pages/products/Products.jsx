@@ -49,6 +49,10 @@ export default function Products() {
         setShowForm(prev => !prev);
     };
 
+    const handleFilteredProducts = (filteredProducts) => {
+        setProducts(filteredProducts);
+    };
+
 
 
 
@@ -73,7 +77,7 @@ export default function Products() {
                 <div className="card col-12 shadow mb-5 rounded border-0">
                     <div className="card-body">
 
-                        <FiltersAndSearch  categories={categories} toggleForm={toggleForm} showForm={showForm}/>
+                        <FiltersAndSearch  categories={categories} toggleForm={toggleForm} showForm={showForm} onFilter={handleFilteredProducts}/>
                         <ProductTable products={products} onProductAdded={fetchProducts} onProductDeleted={fetchProducts}/>
                     </div>
                 </div>

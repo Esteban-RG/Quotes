@@ -77,17 +77,17 @@ export default function ProductTable(props) {
 
                                                     <ul className="list-group list-group-flush mb-4">
                                                         <li className="list-group-item">
-                                                            <strong>Unidad de medida:</strong>{product.unitOfMeasure.name}
+                                                            <strong>Unidad de medida: </strong>{product.unitOfMeasure.name}
                                                         </li>
                                                         <li className="list-group-item">
-                                                            <strong>Categoría:</strong>{product.category.name}
+                                                            <strong>Categoría: </strong>{product.category.name}
                                                         </li>
                                                         <li className="list-group-item">
-                                                            <strong>Precio:</strong> <span
+                                                            <strong>Precio: </strong> <span
                                                                 className="price-format">{product.price}</span>
                                                         </li>
                                                         <li className="list-group-item">
-                                                            <strong>ID:</strong>{product.id}
+                                                            <strong>ID: </strong>{product.id}
                                                         </li>
                                                     </ul>
                                                 </div>

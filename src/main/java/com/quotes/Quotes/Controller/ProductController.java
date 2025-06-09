@@ -89,10 +89,6 @@ public class ProductController {
     }
 
 
-
-
-    // Search
-
     @PostMapping("/search")
     public List<ProductDTO> multiFieldSearch(@RequestBody SearchProduct search){
         
